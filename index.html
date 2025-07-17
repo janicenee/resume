@@ -1,0 +1,838 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林秸妮 - 个人简历</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 配置Tailwind自定义颜色和字体 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6', // 蓝色作为主色调，代表专业和信任
+                        secondary: '#10B981', // 绿色作为辅助色，代表活力
+                        accent: '#F59E0B', // 橙色作为强调色
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .progress-bar {
+                height: 8px;
+                border-radius: 4px;
+                background-color: #e5e7eb;
+                overflow: hidden;
+            }
+            .progress-value {
+                height: 100%;
+                background-color: #3B82F6;
+            }
+            .section-transition {
+                transition: all 0.5s ease;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary">林秸妮 | Janice</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-primary transition-colors">关于我</a>
+                <a href="#education" class="hover:text-primary transition-colors">教育背景</a>
+                <a href="#skills" class="hover:text-primary transition-colors">技能语言</a>
+                <a href="#experience" class="hover:text-primary transition-colors">经历</a>
+                <a href="#works" class="hover:text-primary transition-colors">作品集</a>
+                <a href="#contact" class="hover:text-primary transition-colors">联系方式</a>
+            </div>
+            <button id="menu-toggle" class="md:hidden text-gray-700">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#about" class="py-2 hover:text-primary transition-colors">关于我</a>
+                <a href="#education" class="py-2 hover:text-primary transition-colors">教育背景</a>
+                <a href="#skills" class="py-2 hover:text-primary transition-colors">技能语言</a>
+                <a href="#experience" class="py-2 hover:text-primary transition-colors">经历</a>
+                <a href="#works" class="py-2 hover:text-primary transition-colors">作品集</a>
+                <a href="#contact" class="py-2 hover:text-primary transition-colors">联系方式</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 头部 -->
+    <header class="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-dark">林秸妮 <span class="text-primary">(Janice)</span></h1>
+                    <p class="text-xl text-gray-600 mb-6">南京大学新闻与传播硕士在读</p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">跨文化交流</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">活动策划</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">内容创作</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">社交媒体运营</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">数据分析</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+               
+                     <!-- 头像 -->
+                    <div class="w-64 h-64 rounded-full overflow-hidden shadow-lg border-4 border-white">
+                        <img src="janice.png" alt="-" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-16 bg-white section-transition">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">关于我</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg text-gray-700 mb-6">
+                    本人热爱生活，性格开朗，乐于沟通，积极上进，具备跨文化交流经验，多次代表学校参与调研和公益活动，也热爱艺术与体育。
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm card-hover">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">跨文化背景</h3>
+                        <p class="text-gray-600">马来西亚国籍，在南京大学深造，拥有丰富的跨文化交流经验和国际视野。</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm card-hover">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">内容创作</h3>
+                        <p class="text-gray-600">在多个媒体平台发表文章，擅长纪实类、文化类内容创作，具备扎实的文字功底。</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm card-hover">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">社团活动</h3>
+                        <p class="text-gray-600">积极参与各类社团活动，担任多个组织重要职务，具备优秀的组织协调能力。</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm card-hover">
+                        <div class="text-primary text-3xl mb-4">
+                            <i class="fa fa-bolt"></i> 
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">体育特长</h3>
+                        <p class="text-gray-600">热爱乒乓球运动，在多项比赛中获奖，具备团队合作精神和竞技精神。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育背景 -->
+    <section id="education" class="py-16 bg-gray-50 section-transition">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">教育背景</h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- 时间线 -->
+                <div class="relative">
+                    <!-- 中心线 -->
+                    <div class="absolute h-full w-0.5 bg-primary/30 left-4 md:left-1/2 transform md:-translate-x-1/2"></div>
+                    
+                    <!-- 南京大学硕士 -->
+                    <div class="relative pl-12 md:pl-0 mb-10">
+                        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                            <i class="fa fa-graduation-cap"></i>
+                        </div>
+                        <div class="md:w-5/12 md:ml-auto md:text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold mb-1">南京大学</h3>
+                                <p class="text-primary font-medium mb-2">专业硕士-新闻与传播（新闻创新方向）</p>
+                                <p class="text-gray-600 mb-3">2024-2026</p>
+                                <p class="text-gray-700">致力于新闻创新研究，参与多项调研和媒体实践活动，提升新闻传播专业能力。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 南京大学本科 -->
+                    <div class="relative pl-12 md:pl-0 mb-10">
+                        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                            <i class="fa fa-book"></i>
+                        </div>
+                        <div class="md:w-5/12 md:mr-auto">
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold mb-1">南京大学</h3>
+                                <p class="text-primary font-medium mb-2">本科生-新闻学</p>
+                                <p class="text-gray-600 mb-3">2020-2024</p>
+                                <p class="text-gray-700">主修新闻学专业，系统学习新闻理论与实践，成绩优异。</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 高中 -->
+                    <div class="relative pl-12 md:pl-0">
+                        <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+                            <i class="fa fa-certificate"></i>
+                        </div>
+                        <div class="md:w-5/12 md:ml-auto md:text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-semibold mb-1">马来西亚吧生滨华独立中学</h3>
+                                <p class="text-primary font-medium mb-2">初高中</p>
+                                <p class="text-gray-600 mb-3">2014-2019</p>
+                                <p class="text-gray-700">在中学阶段，积极参与学校的各种社团活动，培养了良好的团队合作能力和领导才能。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能语言 -->
+    <section id="skills" class="py-16 bg-white section-transition">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">技能与语言</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- 专业技能 -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 flex items-center">
+                            <i class="fa fa-cogs text-primary mr-2"></i> 专业技能
+                        </h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">内容创作</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">活动策划</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">社交媒体运营</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">数据分析</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">跨文化交流</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 语言能力 -->
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6 flex items-center">
+                            <i class="fa fa-language text-primary mr-2"></i> 语言能力
+                        </h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">中文</span>
+                                    <span>母语</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">英语</span>
+                                    <span>流利</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">马来语</span>
+                                    <span>流利</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">粤语+闽南语</span>
+                                    <span>良好</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium">韩语</span>
+                                    <span>基础</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-value" style="width: 40%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 经历 -->
+    <section id="experience" class="py-16 bg-gray-50 section-transition">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">经历</h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- 实习经历 -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i class="fa fa-briefcase text-primary mr-2"></i> 实习经历
+                    </h3>
+                    
+                    <div class="bg-white rounded-lg shadow-sm p-6 mb-6 card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <div>
+                                <h4 class="text-xl font-semibold">北京-虎嗅网</h4>
+                                <p class="text-primary">编辑实习生</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">2023年6月-2024年5月</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                            <li>协同新媒体团队优化标题导语，提升内容点击率</li>
+                            <li>使用CMS排版与配图，参与文章审核与编辑</li>
+                            <li>参与选题策划，关注科技、商业、消费等热点话题</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm p-6 card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <div>
+                                <h4 class="text-xl font-semibold">马来西亚-三星SAMSUNG</h4>
+                                <p class="text-primary">销售实习生</p>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">2021年</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                            <li>协助门店销售，向客户讲解手机、平板等核心产品功能与亮点，提升客户购买意愿</li>
+                            <li>参与销售培训课程，熟悉各类产品线及销售话术</li>
+                            <li>协助门店活动执行，包括新品发布、限时促销等</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 校园经历 -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i class="fa fa-university text-primary mr-2"></i> 校园经历
+                    </h3>
+                    
+                    <div class="bg-white rounded-lg shadow-sm p-6 mb-6 card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <div>
+                                <h4 class="text-xl font-semibold">南京大学马来西亚留学生协会</h4>
+                                <p class="text-primary">副主席</p>
+                            </div>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">2022年9月-2023年9月</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                            <li>组织和策划中马文化交流活动，促进两国学生之间的相互了解和友谊</li>
+                            <li>管理学生会日常事务，协调各部门工作，提升组织能力和团队协作能力</li>
+                            <li>与学校国际交流处合作，为马来西亚留学生提供学习和生活上的支持</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-sm p-6 card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                            <div>
+                                <h4 class="text-xl font-semibold">南京大学马来西亚留学生协会</h4>
+                                <p class="text-primary">宣传部部长</p>
+                            </div>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">2021年9月-2022年9月</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                            <li>负责学院活动的宣传推广工作，包括海报设计、文案撰写和社交媒体运营</li>
+                            <li>创新宣传方式，利用新媒体平台提升学院活动的影响力和参与度</li>
+                            <li>与其他部门合作，共同完成协会各项大型活动的组织和策划</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 高光时刻 -->
+    <section id="highlights" class="py-16 bg-gray-50 section-transition">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">高光时刻</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 2022-2023 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 card-hover">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <i class="fa fa-calendar text-primary mr-2"></i> 2022-2023
+                        </h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                            <li>在腾讯旗下的SIXTH TONE、校园媒体"新潮""新天地"均发表过数篇文章</li>
+                            <li>荣获江苏高校外国留学生创意作品"十佳书法作品奖"</li>
+                            <li>江苏广电江苏旅游宣传留学生代表</li>
+                            <li>担任两届UTE环球旅游展览会中文主持和采访</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- 2024-至今 -->
+                    <div class="bg-white rounded-lg shadow-sm p-6 card-hover">
+                        <h3 class="text-xl font-semibold mb-4 flex items-center">
+                            <i class="fa fa-calendar-check-o text-primary mr-2"></i> 2024-至今
+                        </h3>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                            <li>"向张謇学做事"南通调研团队留学生代表</li>
+                            <li>第七届世界公益慈善论坛"五洲筑梦，聚侨同心"留学生代表</li>
+                            <li>2024年9月连云港市、南京市青少年与全球青年结伴前行"向张謇学做事"活动负责人</li>
+                            <li>2024年11月WeChina微观中国·全球青年伙伴交流会活动负责人</li>
+                            <li>全球公益传播研究中心赴兴化市调研交流工作硕士生、留学生代表</li>
+                            <li>在《大学生》发表文章（2025年6月刊）</li>
+                            <li>南京大学乒乓球协会宣传部部员</li>
+                            <li>荣获女子单打第五名 - 2024年南京大学乒乓球书院杯暨新生杯</li>
+                            <li>荣获女子团体赛第四名 - 2025年南京大学乒乓球院系杯</li>
+                            <li>荣获女子双打第一名 - 2025年南京大学乒乓球锦标赛</li>
+                            <li>荣获混双第五名 - 2025年南京大学乒乓球锦标赛</li>
+                            <li>荣获女子单打第四名 - 2025年南京大学乒乓球锦标赛</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- 作品集 -->
+    <section id="works" class="py-16 bg-white section-transition">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">作品集</h2>
+            <div class="max-w-4xl mx-auto">
+                <!-- 独立完成 -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-8 shadow-sm">
+    <h3 class="text-xl font-semibold mb-4 flex items-center">
+        <span class="inline-block w-3 h-3 rounded-full bg-blue-500 mr-2"></span> 独立完成
+    </h3>
+    <ul class="space-y-3 list-disc pl-5"> <!-- 确保保留list-disc和pl-5属性 -->
+        <li>
+            <a href="https://mp.weixin.qq.com/s/RDi3A3FVTWzrwdhTTBDofw" class="text-black hover:text-blue-800 transition-colors">
+                《海外留学生自述：我在马来西亚上南大》新天地
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://www.sixthtone.com/news/1009375" class="text-black hover:text-blue-800 transition-colors">
+                《What Life Is Like for One of China’s Stranded International Students》Sixth Tone
+            </a>
+        </li>
+        
+        <li>
+        <a href="https://www.sixthtone.com/news/1010384" class="text-black hover:text-blue-800 transition-colors">
+        《How Malaysia Is Rediscovering Chinese Cuisine》Sixth Tone
+            </a>
+        </li>
+        
+        <li>
+        <a href="https://mp.weixin.qq.com/s/Vxp_46FkL7LXCWsB1bUNXA" class="text-black hover:text-blue-800 transition-colors">
+        《纪实 | 南下的中国风：在马来西亚品中华美食》新潮
+         </a>
+        </li>
+        
+        <li>
+        <a href="https://mp.weixin.qq.com/s/ffQCWRl6WenZqWLLuOr1gw" class="text-black hover:text-blue-800 transition-colors">
+        《纪实 | 义山：南下华人的长眠之所》新潮
+        </a>
+        </li>
+        
+        <li>
+        <a href="https://mp.weixin.qq.com/s/_5IS56W72UMMNuGK1w_GkA" class="text-black hover:text-blue-800 transition-colors">
+        《宝婕诗与伊娜：两个马来族女孩决定上华文学校》家书工作室
+        </a>
+        </li>
+        
+        <li>
+        <a href="https://mp.weixin.qq.com/s/_kSmC501ofmgghV_XsmYkw" class="text-black hover:text-blue-800 transition-colors">
+        《准媒体人聚会碰撞灵感的火花-第四届大学生校园媒体大赛学生交流分享会》新潮
+        </a>
+        </li>
+        
+        <li>
+        <a href="https://janicenee.github.io/nj_recommendations/" class="text-black hover:text-blue-800 transition-colors">
+        《个人推荐——南京20处绝佳体验》个人网站
+        </a>
+        </li>
+        
+        <li>
+        <a href="https://janicenee.github.io/msia_rubber/" class="text-black hover:text-blue-800 transition-colors">
+        《马来西亚橡胶小百科》个人网站
+        </a>
+        </li>
+    </ul>
+</div>
+                
+                <!-- 协作完成 -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-8 shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <span class="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span> 协作完成
+                    </h3>
+                        <ul class="space-y-3 list-disc pl-5"> <!-- 确保保留list-disc和pl-5属性 -->
+                        <li>
+                        <a href="https:/mp.weixin.qq.com/s/3AvM4FZs-Je9YhDeJmhKgw" class="text-black hover:text-blue-800 transition-colors">
+                        《纪实 | 我爸教我开叉车，我带妈妈做指甲，与家人相处的点滴瞬间，很多第一次》新潮
+                        </a>
+                        </li>
+            
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/kz8BP1OBFlg54J3beC7oMw" class="text-black hover:text-blue-800 transition-colors">
+                        《纪实 | 社恐星人日记》新潮
+                        </a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/zmhgUnNY1P_NBxJ9cJEluw" class="text-black hover:text-blue-800 transition-colors">
+                        《春日雅集｜当我们久居在春天里》 南雍光影纪
+                        </a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/J1tLy3eb6hG7fj-C-lr68Aw" class="text-black hover:text-blue-800 transition-colors">
+                        《桦墅村站到了｜裹在阳光里小憩》南雍光影纪
+                        </a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/9JscicFV1QvWiaGDN4AzBQ" class="text-black hover:text-blue-800 transition-colors">
+                        《未来照相馆｜段京肃老师的西北和江南》南雍光影纪
+                        </a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/WXf-DAR_uf-0FncQZnHFHw" class="text-black hover:text-blue-800 transition-colors">
+                        《动物救助站：流浪到此为止》新记者
+                        </a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/ekonQphVs5VI-Yicp-8N1g" class="text-black hover:text-blue-800 transition-colors">
+                        《南京大学举行第64届田径运动会》新记者
+                        </a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/QbOvzb397Z2ynQNjoNoVDQ" class="text-black hover:text-blue-800 transition-colors">
+                        《2024年，逝去的他们和他们留下的公共遗产》新潮
+                        </a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/fBPSHmoigzl2McC5lc8C7A" class="text-black hover:text-blue-800 transition-colors">
+                        《纪实｜在被贴上"普通"的标签之后》新潮
+                        </a>
+                        </li>
+
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/8kS6DBxhgFXRlMLXyddwCA" class="text-black hover:text-blue-800 transition-colors">
+                        《纪实｜"七日情侣"：当爱情成为可量化的社交实验》新潮
+                        </a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/lURUFIfBvLjjXD4OQEx8LA" class="text-black hover:text-blue-800 transition-colors">
+                        《调查｜国家公园≠景区：中国的绿色治理密码》新潮
+                        </a>
+                        </li>
+
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/vzEj44tuRFnhhRJkbg6_UA" class="text-black hover:text-blue-800 transition-colors">
+                        《调查丨谁更懂你胃口？中西式快餐的营销"食"力战》新潮
+                        </a>
+                        </li>
+
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/pu_o6FYqHajhSZUYBaJUYA" class="text-black hover:text-blue-800 transition-colors">
+                        《一个传统橡胶大国，如何走出"繁荣后的真空"？》家书工作室
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 编辑作品 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <span class="inline-block w-3 h-3 rounded-full bg-purple-500 mr-2"></span> 编辑作品
+                    </h3>
+                    <ul class="space-y-3 list-disc pl-5"> <!-- 确保保留list-disc和pl-5属性 -->
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/f5HxPGga5rEkZWfOyJ-QFg" class="text-black hover:text-blue-800 transition-colors">
+                        《县城里的陪读妈妈》新潮
+                        </a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/XSjn9AyiO3AdgjX3k9jRyQ?scene=1" class="text-black hover:text-blue-800 transition-colors">
+                        《在海龟的治愈下，我重拾了希望》新潮
+                        </a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/HK3tkpcFv5vu22haOgnJIg" class="text-black hover:text-blue-800 transition-colors">
+                        《纪实｜南京中医夜市：点亮脆皮青年的夜空》新潮
+                        </a>
+                        </li>
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/bY-0SUEGpVvAQWg0OerJkA" class="text-black hover:text-blue-800 transition-colors">
+                        《纪实｜我在南大上"魔鬼减脂课"》新潮
+                        </a>
+                        </li>
+
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/k8ghG7Qklj4bIRiqtOK_tw" class="text-black hover:text-blue-800 transition-colors">
+                        《调查｜"贴近千山万水"：冰箱贴如何成为游客新宠？》新潮
+                        </a>
+                        </li>
+
+                        
+                        <li>
+                        <a href="https://mp.weixin.qq.com/s/bw9cbAH6qMIysaVRZKHyEA" class="text-black hover:text-blue-800 transition-colors">
+                        《数据｜保障房30年：安居之梦如何照进现实？》新潮
+                        </a>
+                        </li>
+                        
+                        <li>
+                         <a href="https://mp.weixin.qq.com/s/JFn-lzU1y3_b8nZ24s4pAg" class="text-black hover:text-blue-800 transition-colors">
+                        《突发！一只野猪今日凌晨横穿南大鼓楼校区，同学们竟集体"羡慕"？》新潮
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+<section id="contact" class="py-16 bg-gray-50 section-transition">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-12 text-center">联系方式</h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-xl shadow-md p-8 transform transition-all duration-300 hover:shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fa fa-phone text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">联系电话</h3>
+                                <p class="text-gray-600">+15651805938</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fa fa-envelope text-red-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">电子邮箱</h3>
+                                <p class="text-gray-600">3412705188@qq.com</p>
+                                <p class="text-gray-600">limjienee01@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fa fa-weixin text-green-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">微信</h3>
+                                <p class="text-gray-600">janicenee</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 新增小红书 -->
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 p-3 rounded-full mr-4">
+                                <i class="fa fa-book text-pink-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">小红书</h3>
+                                <p class="text-gray-600">janicenee</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 新增抖音 -->
+                        <div class="flex items-start">
+                            <div class="bg-gray-100 p-3 rounded-full mr-4">
+                                <i class="fa fa-music text-black"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-1">抖音</h3>
+                                <p class="text-gray-600">janicenee</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4">
+                
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 林秸妮个人简历. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow-md');
+                navbar.classList.remove('py-3', 'shadow-sm');
+            } else {
+                navbar.classList.add('py-3', 'shadow-sm');
+                navbar.classList.remove('py-2', 'shadow-md');
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // 监听滚动，高亮当前导航项
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-primary');
+                }
+            });
+        });
+        
+        // 监听滚动，实现渐入效果
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.section-transition').forEach(section => {
+            section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+
